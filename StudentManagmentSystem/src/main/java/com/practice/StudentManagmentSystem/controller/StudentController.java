@@ -18,6 +18,19 @@ public class StudentController {
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
     }
+    
+    /* -----Setter Injection------
+     * @Autowired 
+     * private StudentService studentService;
+     * public void setStrudentController(StudentService studentService){
+     * 	this.studentService = studentService;
+     * }
+     * */
+    
+    /*---------Field Injection---------
+     * @Autowired
+     * private StudentService studentService;
+     * */
 
     // Add student: POST /students
     @PostMapping
