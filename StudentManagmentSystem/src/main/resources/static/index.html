@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Form</title>
+</head>
+<body>
+    <h2>Add Student</h2>
+    <form id="studentForm">
+        <label>ID:</label><br>
+        <input type="number" id="id" required><br>
+        <label>Name:</label><br>
+        <input type="text" id="name" required><br>
+        <label>Marks:</label><br>
+        <input type="number" id="marks" required><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('studentForm');
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const student = {
+                id: document.getElementById('id').value,
+                name: document.getElementById('name').value,
+                marks: document.getElementById('marks').value
+            };
+
+            const response = await fetch('/students', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(student)
+            });
+
+            if (response.ok) {
+                alert("Student added successfully!");
+                form.reset();
+            } else {
+                alert("Error adding student.");
+            }
+        });
+    </script>
+</body>
+</html>
