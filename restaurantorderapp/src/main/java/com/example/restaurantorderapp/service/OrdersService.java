@@ -1,6 +1,7 @@
 package com.example.restaurantorderapp.service;
 
 
+import com.example.restaurantorderapp.DTO.BillDTO;
 import com.example.restaurantorderapp.DTO.OrdersDTO;
 import com.example.restaurantorderapp.entity.OrdersEntity;
 import com.example.restaurantorderapp.repository.OrdersRepository;
@@ -28,5 +29,14 @@ public class OrdersService {
 					order.getFoodItem(),
 					order.getQuantity()))
 			.collect(Collectors.toList());
+	}
+	
+	public List<BillDTO> getAllBill(){
+		List<OrdersEntity> bills = ordersRepository.findAll();
+		return bills.stream().map(order -> new BillDTO(
+				order.getCustomerName(),
+				order.getFoodItem(),
+				order.getPrice()))
+				.collect(Collectors.toList());
 	}
 }
