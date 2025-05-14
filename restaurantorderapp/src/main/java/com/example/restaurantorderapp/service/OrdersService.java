@@ -36,7 +36,7 @@ public class OrdersService {
 		return bills.stream().map(order -> new BillDTO(
 				order.getCustomerName(),
 				order.getFoodItem(),
-				order.getPrice()))
+				(order.getPrice() + (0.18 * order.getPrice()))))
 				.collect(Collectors.toList());
 	}
 }
