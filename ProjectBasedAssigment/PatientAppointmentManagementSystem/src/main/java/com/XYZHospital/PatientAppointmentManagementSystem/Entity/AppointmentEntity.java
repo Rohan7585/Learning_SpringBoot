@@ -19,6 +19,10 @@ public class AppointmentEntity {
 	
 	@Column(name="disease")
 	private String disease;
+	
+	public AppointmentEntity() {
+		
+	}
 
 	public AppointmentEntity(int patientId, int doctorId, String disease) {
 		super();

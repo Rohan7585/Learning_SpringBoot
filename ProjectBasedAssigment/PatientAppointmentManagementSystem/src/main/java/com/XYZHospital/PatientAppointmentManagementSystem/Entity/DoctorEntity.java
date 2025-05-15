@@ -19,6 +19,10 @@ public class DoctorEntity {
 	
 	@Column(name="doctor_degree")
 	private String docDegree;
+	
+	public DoctorEntity() {
+		
+	}
 
 	public DoctorEntity(String docName, String docDomain, String docDegree) {
 		super();

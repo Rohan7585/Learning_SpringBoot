@@ -29,4 +29,12 @@ public class PatientController {
 		return patientService.getAllPatient();
 	}
 
+	/*Paylaod
+{
+  "patientName": "ABCD",
+  "patientAge": 20,
+  "patientGender": "Male",
+  "patientContact": "9876543210"
+}
+	  */
 }
