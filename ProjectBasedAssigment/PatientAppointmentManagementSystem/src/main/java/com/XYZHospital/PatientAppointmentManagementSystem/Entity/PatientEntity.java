@@ -8,6 +8,7 @@ public class PatientEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="patient_id")
 	private int patientId;
 	
 	@Column(name="patient_name")
@@ -21,6 +22,10 @@ public class PatientEntity {
 	
 	@Column(name="patient_contact")
 	private String PatientContact;
+	
+
+	public PatientEntity() {
+	}
 
 	public PatientEntity(String patientName, int patientAge, String patientGender, String patientContact) {
 		super();

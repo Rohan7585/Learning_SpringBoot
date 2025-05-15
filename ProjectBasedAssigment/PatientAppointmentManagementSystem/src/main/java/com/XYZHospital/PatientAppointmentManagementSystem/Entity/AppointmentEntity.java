@@ -8,12 +8,13 @@ public class AppointmentEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="appointment_id")
 	private int appointmentId;
 	
-	@Column(name="patientId")
+	@Column(name="patient_Id")
 	private int patientId;
 	
-	@Column(name="doctorId")
+	@Column(name="doctor_Id")
 	private int doctorId;
 	
 	@Column(name="disease")

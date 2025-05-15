@@ -11,7 +11,8 @@ import com.XYZHospital.PatientAppointmentManagementSystem.Repository.DoctorRepos
 @Service
 public class DoctorService {
 	
-	@Autowired DoctorRepository doctorRepository;
+	@Autowired 
+	private DoctorRepository doctorRepository;
 	
 	public DoctorEntity addDoctors(DoctorEntity doctorEntity){
 		return doctorRepository.save(doctorEntity);

@@ -11,7 +11,8 @@ import com.XYZHospital.PatientAppointmentManagementSystem.Repository.Appointment
 @Service
 public class AppointmentService {
 
-	@Autowired AppointmentRepository appointmentRepository;
+	@Autowired 
+	private AppointmentRepository appointmentRepository;
 	
 	public AppointmentEntity addAppointment(AppointmentEntity appointmentEntity) {
 		return appointmentRepository.save(appointmentEntity);
