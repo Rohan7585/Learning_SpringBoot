@@ -13,7 +13,7 @@ import com.XYZHospital.PatientAppointmentManagementSystem.Entity.PatientEntity;
 import com.XYZHospital.PatientAppointmentManagementSystem.Service.PatientService;
 
 @RestController
-@RequestMapping("/patient")
+@RequestMapping("/patient/viewDoctors")
 public class PatientController {
 	
 	@Autowired
