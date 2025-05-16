@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.XYZHospital.PatientAppointmentManagementSystem.DTO.DoctorAppointmentPatientDTO;
 import com.XYZHospital.PatientAppointmentManagementSystem.Entity.AppointmentEntity;
 import com.XYZHospital.PatientAppointmentManagementSystem.Repository.AppointmentRepository;
 
@@ -22,4 +23,8 @@ public class AppointmentService {
 		return appointmentRepository.findAll();
 	}
 	
+	/*
+	public List<DoctorAppointmentPatientDTO> getAppointmentsForDoctor(Long doctorId) {
+        return appointmentRepository.getAppointmentsByDoctorId(doctorId);
+    }*/
 }

@@ -4,12 +4,15 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.XYZHospital.PatientAppointmentManagementSystem.DTO.DoctorAppointmentPatientDTO;
 import com.XYZHospital.PatientAppointmentManagementSystem.Entity.DoctorEntity;
+import com.XYZHospital.PatientAppointmentManagementSystem.Service.AppointmentService;
 import com.XYZHospital.PatientAppointmentManagementSystem.Service.DoctorService;
 
 @RestController
@@ -17,6 +20,8 @@ import com.XYZHospital.PatientAppointmentManagementSystem.Service.DoctorService;
 public class DoctorController {
 	@Autowired 
 	private DoctorService doctorService;
+	@Autowired
+    private AppointmentService appointmentService;
 	
 	@PostMapping
 	public DoctorEntity addDoctor(@RequestBody DoctorEntity doctorEntity) {
@@ -27,6 +32,12 @@ public class DoctorController {
 	public List<DoctorEntity> getAllDoctors(){
 		return doctorService.getAllDoctor();
 	}
+	
+	/*
+	@GetMapping("/{doctorId}/appointments")
+    public List<DoctorAppointmentPatientDTO> getDoctorAppointments(@PathVariable Long doctorId) {
+        return appointmentService.getAppointmentsForDoctor(doctorId);
+    }*/
 	
 	/*Paylaod
 	{

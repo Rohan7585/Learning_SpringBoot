@@ -11,10 +11,12 @@ public class AppointmentEntity {
 	@Column(name="appointment_id")
 	private int appointmentId;
 	
-	@Column(name="patient_Id")
+	@ManyToOne
+	@JoinColumn(name="patient_Id")
 	private int patientId;
 	
-	@Column(name="doctor_Id")
+	@ManyToOne
+	@JoinColumn(name="doctor_Id")
 	private int doctorId;
 	
 	@Column(name="disease")
