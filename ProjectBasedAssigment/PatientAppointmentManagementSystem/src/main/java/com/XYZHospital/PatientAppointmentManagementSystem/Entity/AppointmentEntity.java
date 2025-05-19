@@ -12,12 +12,12 @@ public class AppointmentEntity {
 	private int appointmentId;
 	
 	@ManyToOne
-	@JoinColumn(name="patient_Id")
-	private int patientId;
-	
+	@JoinColumn(name = "doctor_id")
+	private DoctorEntity doctor;
+
 	@ManyToOne
-	@JoinColumn(name="doctor_Id")
-	private int doctorId;
+	@JoinColumn(name = "patient_id")
+	private PatientEntity patient;
 	
 	@Column(name="disease")
 	private String disease;
@@ -26,27 +26,35 @@ public class AppointmentEntity {
 		
 	}
 
-	public AppointmentEntity(int patientId, int doctorId, String disease) {
+	public AppointmentEntity(DoctorEntity doctor, PatientEntity patient, String disease) {
 		super();
-		this.patientId = patientId;
-		this.doctorId = doctorId;
+		this.doctor = doctor;
+		this.patient = patient;
 		this.disease = disease;
 	}
 
-	public int getPatientId() {
-		return patientId;
+	public int getAppointmentId() {
+		return appointmentId;
 	}
 
-	public void setPatientId(int patientId) {
-		this.patientId = patientId;
+	public void setAppointmentId(int appointmentId) {
+		this.appointmentId = appointmentId;
 	}
 
-	public int getDoctorId() {
-		return doctorId;
+	public DoctorEntity getDoctor() {
+		return doctor;
 	}
 
-	public void setDoctorId(int doctorId) {
-		this.doctorId = doctorId;
+	public void setDoctor(DoctorEntity doctor) {
+		this.doctor = doctor;
+	}
+
+	public PatientEntity getPatient() {
+		return patient;
+	}
+
+	public void setPatient(PatientEntity patient) {
+		this.patient = patient;
 	}
 
 	public String getDisease() {
@@ -56,6 +64,8 @@ public class AppointmentEntity {
 	public void setDisease(String disease) {
 		this.disease = disease;
 	}
+
+	
 	
 	
 

@@ -2,7 +2,7 @@ package com.XYZHospital.PatientAppointmentManagementSystem.DTO;
 
 public class DoctorAppointmentPatientDTO {
 
-	private Long appointmentId;
+	private int appointmentId;
     private String patientName;
     private int patientAge;
     private String patientGender;
@@ -13,8 +13,8 @@ public class DoctorAppointmentPatientDTO {
 	public DoctorAppointmentPatientDTO() {
 		super();
 	}
-	public DoctorAppointmentPatientDTO(Long appointmentId, String patientName, int patientAge, String patientGender,
-			String patientDisease) {
+	public DoctorAppointmentPatientDTO(int appointmentId, String patientName, int patientAge, String patientGender, String patientDisease)
+ {
 		super();
 		this.appointmentId = appointmentId;
 		this.patientName = patientName;
@@ -22,10 +22,10 @@ public class DoctorAppointmentPatientDTO {
 		this.patientGender = patientGender;
 		this.patientDisease = patientDisease;
 	}
-	public Long getAppointmentId() {
+	public int getAppointmentId() {
 		return appointmentId;
 	}
-	public void setAppointmentId(Long appointmentId) {
+	public void setAppointmentId(int appointmentId) {
 		this.appointmentId = appointmentId;
 	}
 	public String getPatientName() {

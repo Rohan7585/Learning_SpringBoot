@@ -13,12 +13,14 @@ import com.XYZHospital.PatientAppointmentManagementSystem.Entity.AppointmentEnti
 @Repository
 public interface AppointmentRepository extends JpaRepository<AppointmentEntity, Long>{
 
-	@Query("select a.appointment_id, p.patient_name, patient_age, patient_gender, a.disease\r\n"
-			+ "from doctor d, patient p, appointment a where\r\n"
-			+ "a.patient_id = p.patient_id\r\n"
-			+ "and a.doctor_id = d.doctor_id\r\n"
-			+ "and d.doctor_id = :doctorId")
+	@Query("SELECT new com.XYZHospital.PatientAppointmentManagementSystem.DTO.DoctorAppointmentPatientDTO(" +
+		       " a.appointmentId, p.patientName, p.patientAge, p.patientGender, a.disease) " +
+		       "FROM AppointmentEntity a " +
+		       "JOIN a.patient p " +
+		       "JOIN a.doctor d " +
+		       "WHERE d.id = :doctorId")
 		List<DoctorAppointmentPatientDTO> findAppointmentsByDoctorId(@Param("doctorId") Long doctorId);
+
 }
 
 

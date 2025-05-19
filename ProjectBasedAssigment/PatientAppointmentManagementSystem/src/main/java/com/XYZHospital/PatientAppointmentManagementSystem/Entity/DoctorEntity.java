@@ -9,7 +9,7 @@ public class DoctorEntity {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="doctor_id")
-	private int id;
+	private Long id;
 	
 	@Column(name="doctor_name")
 	private String docName;

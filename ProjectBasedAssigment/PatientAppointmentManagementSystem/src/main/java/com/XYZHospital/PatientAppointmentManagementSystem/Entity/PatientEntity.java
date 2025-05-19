@@ -15,13 +15,13 @@ public class PatientEntity {
 	private String patientName;
 	
 	@Column(name="patient_age")
-	private int PatientAge;
+	private int patientAge;
 	
 	@Column(name="patient_gender")
-	private String PatientGender;
+	private String patientGender;
 	
 	@Column(name="patient_contact")
-	private String PatientContact;
+	private String patientContact;
 	
 
 	public PatientEntity() {
@@ -30,9 +30,9 @@ public class PatientEntity {
 	public PatientEntity(String patientName, int patientAge, String patientGender, String patientContact) {
 		super();
 		this.patientName = patientName;
-		PatientAge = patientAge;
-		PatientGender = patientGender;
-		PatientContact = patientContact;
+		this.patientAge = patientAge;
+		this.patientGender = patientGender;
+		this.patientContact = patientContact;
 	}
 
 
@@ -45,27 +45,27 @@ public class PatientEntity {
 	}
 
 	public int getPatientAge() {
-		return PatientAge;
+		return patientAge;
 	}
 
 	public void setPatientAge(int patientAge) {
-		PatientAge = patientAge;
+		this.patientAge = patientAge;
 	}
 
 	public String getPatientGender() {
-		return PatientGender;
+		return patientGender;
 	}
 
 	public void setPatientGender(String patientGender) {
-		PatientGender = patientGender;
+		this.patientGender = patientGender;
 	}
 
 	public String getPatientContact() {
-		return PatientContact;
+		return patientContact;
 	}
 
 	public void setPatientContact(String patientContact) {
-		PatientContact = patientContact;
+		this.patientContact = patientContact;
 	}
 	
 	
