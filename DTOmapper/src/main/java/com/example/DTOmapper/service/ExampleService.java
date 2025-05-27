@@ -13,22 +13,22 @@ import com.example.DTOmapper.repository.ExampleRepository;
 public class ExampleService {
 
     @Autowired
-    private ExampleRepository ExampleRepository;
+    private ExampleRepository exampleRepository;
 
     @Autowired
-    private ExampleMapper ExampleMapper;
+    private ExampleMapper exampleMapper;
 
     public ExampleDTO getExampleById(Long id) {
-        ExampleEntity entity = ExampleRepository.findById(id)
+        ExampleEntity entity = exampleRepository.findById(id)
             .orElseThrow(() -> new RuntimeException("Example not found"));
 
-        return ExampleMapper.toDTO(entity);
+        return exampleMapper.toDTO(entity);
     }
 
     public ExampleDTO createExample(ExampleDTO dto) {
-        ExampleEntity entity = ExampleMapper.toEntity(dto);
-        ExampleEntity saved = ExampleRepository.save(entity);
-        return ExampleMapper.toDTO(saved);
+        ExampleEntity entity = exampleMapper.toEntity(dto);
+        ExampleEntity saved = exampleRepository.save(entity);
+        return exampleMapper.toDTO(saved);
     }
 }
 
